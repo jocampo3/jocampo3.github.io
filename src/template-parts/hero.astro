@@ -1,4 +1,4 @@
-<div class="hero-container flex md:flex-col pb-8 pt-10 md:pt-22 lg:pt-22">
+<div id="hero" class="hero-container flex md:flex-col pb-8 pt-10 md:pt-22 lg:pt-22">
   <div class="hero-content-container flex flex-col gap-8 lg:gap-0 lg:flex-row items-center justify-center">
     <div class="headshots max-w-[50%] lg:max-w-[30%]  rounded-full mx-auto lg:ml-auto">
       <img id="sketch-headshot" class="w-full h-full" src="/assets/images/sketch-headshot.png"/>
@@ -92,10 +92,10 @@
 .social-link {
 min-height: 25px;
 min-width: 30px;
+transition: transform .6s ease;
 }
 
 .link-container img:hover {
-	transition: 100ms ease-in-out;
-	transform: translateY(-1px);
+	transform: translateY(-4px);
 }
 </style>
