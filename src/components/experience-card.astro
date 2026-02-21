@@ -1,0 +1,79 @@
+---
+interface Props {
+  workImage?: string;
+  role: string;
+  roleDescription?: string;
+  employer: string;
+  employmentStatus?: string; 
+  skills?: string[]; 
+};
+
+const statusClass = {
+  'Current': 'text-green-200 lg:mr-12 py-2 px-4 border border-solid border-green-300 rounded-xl hover:border-2 hover:border-green-800 hover:bg-green-300 hover:text-black hover:font-bold',
+  'Previous': 'text-gray-400'
+};
+const { workImage, role, roleDescription, employer, employmentStatus, skills } = Astro.props;
+---
+<div class="work-items-container">
+  <div class="work-item border border-gray-100 rounded-xl flex flex-col ">
+    <div class="top-row flex flex-col md:flex-row lg:flex-row items-center md:items-start lg:items-start gap-4 md:gap-8 lg:gap-8 md:ml-8 lg:ml-8 mt-8 ">
+      <div class="max-w-[20%] md:max-w-[10%] lg:max-w-[10%]" class="logo">
+        <img class="max-h-[40px]" alt="item-logo" src={workImage}/>
+      </div>
+      <div class="role flex flex-col items-start">
+        <p class="role text-[white] font-bold text-2xl">{role}</p>
+        <p class="employer-name text-[#cdcdcd] mx-auto sm:mx-0 md:mx-0 lg:mx-0  text-lg italic">{employer}</p>
+      </div>
+      <span class=`role-status ${statusClass[employmentStatus] ?? ""} mb-auto md:ml-auto lg:ml-auto sm:mr-12 ml:mr-12`>{employmentStatus}</span>
+    </div>
+    <div class="middle-row flex py-4">
+      <p class="text-[#cdcdcd] text-lg ml-8 mr-2 md:mr-2 lg:mr-2 md:ml-8 lg:ml-8">{roleDescription}</p>
+    </div>
+    <div class="bottom-row pt-4 pb-8 ml-2 mr-2 md:mr-2 lg:mr-2 md:ml-8 lg:ml-8">
+      <div class="skills grid grid-cols-3 sm:flex md:flex xl:flex items-start gap-4">
+        {
+          skills?.map((skill, i) => (
+            <span class="skill text-center text-xs text-[white] bg-[#243B55] mb-auto py-2 px-4 border border-solid border-gray-100 rounded-xl">{skill}</span>
+          ))
+        }
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+.work-item {
+	background-color: #3C3857;
+}
+
+.work-item:hover {
+	background-color: rgba(42, 40, 62, 0.8);
+}
+
+.skill {
+	background-color: rgba(178,194,223,0.1);
+}
+
+.skill:hover {
+	background-color: rgba(178,194,223,0.4);
+}
+
+.orb {
+	backface-visibility: hidden;
+	color: rgba(178,194,223,0.2);
+	box-shadow: 50vmin 0 6vmin currentColor;
+	animation: move 10s linear infinite;
+}
+
+@keyframes move {
+	100% {
+		transform: translate(2px, 2px);
+	}
+}
+
+@media screen and (max-width: 768px) {
+    .orb {
+        display: none;
+    }
+}
+</style>

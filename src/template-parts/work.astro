@@ -1,0 +1,12 @@
+---
+import ExperienceCard from '../components/experience-card.astro';
+---
+
+<section id="experience" class="work-experience flex flex-col py-16 relative z-1 ">
+  <h1 class="text-center text-4xl md:text-5xl lg:text-5xl pb-2">Work Experience</h1>
+  <p class="text-xl text-center italic text-[#CFCDDF] pb-6 mx-5">Recent job experience from the past 2.5 years working as a dev</p>
+  <div class="work-content grid grid-cols-1 xl:grid-cols-2 items-center justify-center px-10 lg:px-[10%] gap-8 relative z-1">
+    <ExperienceCard workImage='/assets/icons/mindvolt.webp' role='Software Developer' roleDescription='I help manage multiple client projects while building full-stack web applications using WordPress, JavaScript, Python/Flask, and collaborating with cross-functional teams to deliver custom solutions' employer='scott wehrenberg llc' employmentStatus='Current' skills={['SQLAlchemy', 'Flask', 'Python', 'Astro', 'Svelte']}/>
+    <ExperienceCard workImage='/assets/icons/gunprime.png' role='Software Developer' roleDescription='I helped maintain and enhance Ruby on Rails applications with MVC architecture and ActiveRecord while deploying AWS Lambda Python scripts to meet business requirements' employer='gunprime' employmentStatus='Previous' skills={['Ruby on Rails', 'AWS Lambda', 'AWS EC2', 'Django', 'Python']}/>
+  </div>
+</section>

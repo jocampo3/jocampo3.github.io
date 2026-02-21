@@ -1,0 +1,59 @@
+<header class="bg-[#2A283ECC] header-container sticky top-0 z-10" id="nav-bar">
+	<div class="header-content py-4">
+		<div class="header-content mx-12 md:mx-40 lg:mx-40 flex justify-between items-center max-w-[1440px]">
+			<a class="header-text text-4xl font-bold text-[#CFCDDF] pb-1" href="/">j</a>
+			<nav id="desktop-menu" class="header-menu flex items-center justify-center gap-12 ">
+        <a href="/" class="text-2xl text-[#CFCDDF] btn bg-none border-none">Home</a>
+				<a href="#experience" class="text-2xl text-[#CFCDDF] btn bg-none border-none">Work</a>
+				<a href="#projects" class="text-2xl text-[#CFCDDF] btn bg-none border-none">Projects</a>
+      </nav>
+      <nav id="mobile-menu" class="dropdown">
+        <div tabindex="0" role="button" class="hamburger btn">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10" fill="#CFCDDF" viewBox="0 0 24 24" stroke="#CFCDDF"> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h7" /> </svg>
+        </div>
+        <ul tabindex="-1" class="menu menu-sm dropdown-content bg-[#2A283E] absolute top-[140%] left-[-75%]">
+          <li><a class="text-lg text-[#CFCDDF]" href="/">Home</a></li>
+          <li><a class="text-lg text-[#CFCDDF]" href="#experience">Work</a></li>
+          <li><a class="text-lg text-[#CFCDDF]" href="#projects">Experience</a></li>
+        </ul>
+      </nav>
+		</div>
+	</div>
+</header>
+
+<style>
+.btn {
+background: none !important;
+box-shadow: none !important;
+}
+#mobile-menu{
+  display: none;
+}
+#mobile-menu li a {
+  display: inline-block;
+}
+
+#mobile-header{
+  display: none;
+}
+@media (max-width: 950px) {
+  #desktop-header {
+    display: none;
+  }
+  #mobile-header {
+    display: block;
+  }
+  #desktop-menu {
+    display: none;
+  }
+  #mobile-menu {
+    display: block;
+  }
+  #mobile-menu .hamburger {
+    background: none;
+    box-shadow: none;
+    border: none;
+  }
+  
+}
+</style>

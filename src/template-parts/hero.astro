@@ -1,0 +1,101 @@
+<div class="hero-container flex md:flex-col pb-8 pt-10 md:pt-22 lg:pt-22">
+  <div class="hero-content-container flex flex-col gap-8 lg:gap-0 lg:flex-row items-center justify-center">
+    <div class="headshots max-w-[50%] lg:max-w-[30%]  rounded-full mx-auto lg:ml-auto">
+      <img id="sketch-headshot" class="w-full h-full" src="/assets/images/sketch-headshot.png"/>
+      <img id="normal-headshot" class="w-full h-full" src="/assets/images/JoseOcampo-Cropped.JPG"/>
+    </div>
+    <div class="max-w-[90%] lg:max-w-[40%] mx-auto">
+      <div class="flex flex-col gap-4">
+<h1 class="text text-3xl md:text-5xl lg:text-5xl text-center md:text-left lg:text-left">Welcome! <span class="text"> I&apos;m Jose</span></h1>
+<p class=" text-2xl md:text-3xl lg:text-3xl text-center md:text-left lg:text-left">Software <span class="text-">Developer</span></p>
+        <p class=" text-xl md:text-2xl lg:text-2xl">I am a Computer Science graduate looking to use my formal education in CS to contribute to the tech industry. I made the switch to CS at the beginning of my Junior year, and I have fallen in love with all things CS since then. I am open to any and all collaborations, so feel free to send me an email or connect with me on Linkedin or Github.</p>
+        <div class="hero-social-icons flex justify-center lg:justify-start items-center gap-12">
+          <div class="link-container w-10">
+            <a href="https://medium.com/@jeocampo" target="_blank">
+              <img class="social-link w-full cursor-pointer" src="/assets/icons/icons8-medium-100.png"/>
+            </a>
+          </div>
+          <div class="link-container w-10">
+            <a href="https://github.com/jocampo3" target="_blank">
+              <img class="social-link w-full cursor-pointer" src="/assets/icons/github.webp"/>
+            </a>
+          </div>
+          <div class="link-container w-10">
+            <a href="https://linkedin.com/in/jose-ocampo03" target="_blank">
+              <img class="social-link w-full cursor-pointer" src="/assets/icons/linkedin.webp"/>
+            </a>
+          </div>
+          <div class="link-container w-10 flex">
+            <a href="mailto:ocampojose305@gmail.com" target="_blank">
+              <img class="social-link w-full cursor-pointer" src="/assets/icons/envelope.webp"/>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="get-started-container flex justify-center w-full">
+  <a href="#experience" class="get-started-content flex flex-col items-center justify-center gap-6 px-100 pb-40 border-b border-solid border-[#CFCDDF]">
+<p class="text-5xl text-[#CFCDDF]">Get Started</p>
+    <svg id="caret" xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="#CFCDDF" class="bi bi-caret-down-fill" viewBox="0 0 16 16">
+      <path d="M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z"/>
+    </svg>
+  </a>
+</div>
+<style>
+#caret { animation: pulse 600ms infinite; }
+@keyframes pulse {
+    0% { transform: translateY(3px); }
+    50% { transform: translateY(1px); }
+    100% { transform: translateY(3px); }
+}
+.headshots {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  overflow: hidden; /* ensures circle crop works */
+}
+
+.headshots img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: opacity 0.3s ease;
+}
+
+.headshots img:last-child {
+  opacity: 0;
+}
+
+.headshots:hover img:first-child {
+  opacity: 0;
+}
+
+.headshots:hover img:last-child {
+  opacity: 1;
+}
+
+.get-started-content {
+  padding: calc(var(--spacing) * 10) calc(var(--spacing) * 30);
+}
+
+
+@media (max-width: 768px) {
+  .get-started-content {
+    padding: calc(var(--spacing) * 10) 0;
+  }
+}
+
+.social-link {
+min-height: 25px;
+min-width: 30px;
+}
+
+.link-container img:hover {
+	transition: 100ms ease-in-out;
+	transform: translateY(-1px);
+}
+</style>

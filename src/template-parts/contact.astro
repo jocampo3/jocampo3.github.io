@@ -1,0 +1,36 @@
+<script is:inline>
+function submitMessage() {
+	let contactForm = document.getElementById('contact-form');
+	let submitMessage = document.getElementById('submit-message');
+	contactForm.style.display = 'none';
+	submitMessage.style.display = 'block';
+}
+
+</script>
+
+<section id="contact-section">
+	<div class="contact-container flex flex-col justify-center items-end">
+		<div class="contact-content flex flex-col items-start">
+			<div id="contact-form" class="flex flex-col gap-8 pb-8">
+				<h2 class="text-3xl font-bold text-[rgb(96,93,255)]">Contact Me</h2>
+				<input type="text" placeholder="Subject" class="rounded-md py-2 pl-2 px-20 placeholder-white text-white text-sm border border-solid border-[rgb(96,93,255)]"/>
+				<textarea placeholder="Message" class="rounded-md pt-2 pb-20 pl-2 placeholder-white text-white text-sm border border-solid border-[rgb(96,93,255)]"/>
+				<button class="btn btn-outline btn-primary border-none mr-auto" onclick="submitMessage()">Submit</button>
+			</div>
+		</div>
+	</div>
+	<div id="submit-message" class="hidden">
+		<div class="flex flex-col justify-center items-end">
+			<h2 class="text-xl font-bold text-white">*Thank you for submitting your message!</h2>
+			<p class="text-[8px] font-bold text-gray-300">*Note: This is not a working feature of the site yet! Please forward your inquires to <a class="underline" href="mailto:dulcezerep01@gmail.com">dulcezerep01@gmail.com</a></p>
+		</div>
+	</div>
+</section>
+
+<style>
+  @media (max-width: 768px) {
+    .contact-container {
+      align-items: center;
+    }
+  }
+</style>

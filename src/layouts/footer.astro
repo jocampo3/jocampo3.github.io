@@ -1,0 +1,74 @@
+---
+import Contact from '../template-parts/contact.astro';
+---
+<footer class="bg-[#2A283ECC] flex flex-col pt-10 pb-4">
+	<div class="footer-content flex justify-between mx-50">
+		<div class="footer-links flex flex-col my-auto gap-8">
+			<h2 class="text-3xl font-bold text-[#CFCDDF]">Quick Links</h2>
+			<div class="page-links grid grid-cols-2 gap-8">
+				<a href="#about" class="btn text-[#CFCDDF] mr-auto p-0 ">Back to Top</a>
+				<a href="#experience" class="btn text-[#CFCDDF] mr-auto p-0">Work</a>
+				<a href="#projects" class="btn text-[#CFCDDF] mr-auto p-0">Projects</a>
+			</div>
+			<div class="social-links flex justify-start items-end gap-8">
+        <div class="link-container w-10">
+          <a href="https://medium.com/@jeocampo" target="_blank">
+            <img class="social-link w-full cursor-pointer" src="/assets/icons/icons8-medium-100.png"/>
+          </a>
+        </div>
+        <div class="link-container w-10">
+          <a href="https://github.com/jocampo3" target="_blank">
+            <img class="social-link w-full cursor-pointer" src="/assets/icons/github.webp"/>
+          </a>
+        </div>
+        <div class="link-container w-10">
+          <a href="https://linkedin.com/in/jose-ocampo03" target="_blank">
+            <img class="social-link w-full cursor-pointer" src="/assets/icons/linkedin.webp"/>
+          </a>
+        </div>
+        <div class="link-container w-10 flex">
+          <a href="mailto:ocampojose305@gmail.com" target="_blank">
+            <img class="social-link w-full cursor-pointer" src="/assets/icons/envelope.webp"/>
+          </a>
+        </div>
+			</div>
+		</div>
+		<!-- <Contact client:load/> -->
+	</div>
+	<div class="privacy-links">
+		<p class="text-[#CFCDDF] text-center text-[9px]">&#169; 2026 Jose Ocampo. All Rights Reserved</p>
+	</div>
+</footer>
+
+<style>
+.btn {
+border: none !important;
+background: none !important;
+box-shadow: none !important;
+}
+
+.social-link {
+min-height: 25px;
+min-width: 30px;
+}
+.link-container img:hover {
+	transition: 500ms ease-in-out;
+	transform: translateY(-1px);
+}
+.page-links a:hover {
+	background: none;
+	border: none;
+	box-shadow: none;
+}
+@media (max-width: 950px) {
+  .footer-content {
+    flex-direction: column;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .footer-links {
+    align-items: center;
+    padding-bottom: calc(var(--spacing) * 8);
+  }
+}
+</style>

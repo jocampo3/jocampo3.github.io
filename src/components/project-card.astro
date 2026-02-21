@@ -1,0 +1,36 @@
+---
+interface Props {
+  projectName: string;
+  projectLink?: string;
+  projectType?: string;
+  projectFramework?: string;
+  projectDesc?: string;
+  projectImage?: string;
+}
+const { projectName, projectDesc, projectFramework, projectLink, projectType, projectImage } = Astro.props;
+---
+<a href={projectLink} target="_blank" class="project border-2 border-solid border-gray-100 rounded-xl max-w-[90%]">
+  <div class="project-content flex flex-col">
+    <img src={projectImage} alt="ta-screenshot" class="mb-2 rounded-lg h-[175px]"/>
+    <div class="flex justify-between px-4">
+      <p class="project-type text-gray-100">{projectType}</p>
+      <p class="project-framework text-gray-100">{projectFramework}</p>
+    </div>
+    <h4 class="project-name text-white font-bold text-2xl pt-1 px-4">{projectName}</h4>
+    <p class="project-desc text-gray-100 italic text-lg pt-1 px-4 pb-4">{projectDesc}</p>
+  </div>
+</a>
+
+<style>
+.project {
+	background-color: #3C3857;
+}
+
+.project:hover {
+	background-color: rgba(42, 40, 62, 0.8);
+}
+
+a {
+	cursor: pointer;
+}
+</style>
