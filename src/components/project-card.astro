@@ -11,7 +11,7 @@ const { projectName, projectDesc, projectFramework, projectLink, projectType, pr
 ---
 <a href={projectLink} target="_blank" class="project border-2 border-solid border-gray-100 rounded-xl max-w-[90%]">
   <div class="project-content flex flex-col">
-    <img src={projectImage} alt="ta-screenshot" class="mb-2 rounded-lg h-[175px]"/>
+    <img src={projectImage} alt=`${projectName.replaceAll(" ", "-")}-image` class="mb-2 rounded-lg h-[175px]"/>
     <div class="flex justify-between px-4">
       <p class="project-type text-[#cdcdcd]">{projectType}</p>
       <p class="project-framework text-[#cdcdcd]">{projectFramework}</p>
