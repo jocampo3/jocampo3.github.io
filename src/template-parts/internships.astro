@@ -1,0 +1,51 @@
+---
+import ExperienceCard from '../components/experience-card.astro';
+---
+
+<script is:inline>
+function updateButtonText() {
+  const expDiv = document.getElementById('internship-experience');
+  const btn = document.getElementById('internship-btn-toggle');
+  btn.textContent = expDiv.classList.contains('show') ? 'Hide experiences ↑' : 'Show more experiences ↓';
+}
+
+window.addEventListener('DOMContentLoaded', () => {
+  updateButtonText();
+});
+
+function toggleExperiences() {
+  const expDiv = document.getElementById('internship-experience');
+  expDiv.classList.toggle('show');
+
+  updateButtonText();
+}
+</script>
+
+<button id="internship-btn-toggle" onclick="toggleExperiences()" class="btn btn-ghost hover:bg-[#3C3857] text-sm italic flex mx-auto cursor-pointer"></button>
+
+<section id="internship-experience" class="work-experience flex-col relative z-1">
+  <h1 class="text-center text-4xl md:text-5xl lg:text-5xl pb-2">Internship Experience</h1>
+  <p class="text-xl text-center italic text-[#CFCDDF] pb-6 mx-5">Previous internship experiences with companies I worked with while working towards my bachelors.</p>
+  <div class="work-content grid grid-cols-1 xl:grid-cols-2 items-center justify-center px-10 lg:px-[10%] gap-8 relative z-1">
+    <ExperienceCard workImage='/assets/icons/samford.png' role='Information Security Analyst' roleDescription='I contributed to IT security initiatives by developing a proposal on peripheral device management, testing and documenting antivirus procedures in Ubuntu, and working with security tools like Sophos, Arctic Wolf, and Tenable to support patching and threat monitoring.' employer='samford university' employmentStatus='Internship' skills={['Tenable', 'Sophos', 'Artic Wolf', 'Red Hat']}/>
+    <ExperienceCard workImage='/assets/icons/encompass_health.png' role='Clinical Systems Analyst' roleDescription='I supported clinical IT operations by developing standardized configuration documentation, troubleshooting critical healthcare technologies, and contributing to architecture review decisions to ensure reliable and compliant clinical solutions across rehab facilities.' employer='encompass health' employmentStatus='Internship' skills={['Clincial Systems', 'ServiceNow', 'Cerner']}/>
+  </div>
+</section>
+
+<style>
+#internship-experience {
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  padding-top: 0;
+  padding-bottom: 0;
+  transition: max-height 0.5s ease-in-out, opacity 0.5s ease-in-out, padding 0.5s ease-in-out;
+}
+
+#internship-experience.show {
+  max-height: 2000px;
+  opacity: 1;
+  padding-top: calc(var(--spacing) * 16);
+  padding-bottom: calc(var(--spacing) * 16);
+}
+</style>

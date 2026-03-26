@@ -1,0 +1,59 @@
+---
+import PythonCode from './code/insertion-sort-py.md';
+import JSCode from './code/insertion-sort-js.md';
+import Layout from '../../../layouts/layout.astro';
+---
+
+<script is:inline>
+window.addEventListener('DOMContentLoaded', (e) => {
+  let activeSnippet = document.querySelector('.code-snippet.active');
+  if (!activeSnippet) {
+    let snippetGroup = document.querySelector('.code-snippet-group');
+    let firstChild = snippetGroup.children[0];
+    firstChild.classList.add('active');
+  }
+})
+
+function showCodeSnippet(lang) {
+  let activeSnippet = document.querySelector('.code-snippet.active');
+  if (activeSnippet.classList.contains('active')) {
+    activeSnippet.classList.remove('active');
+  }
+
+  let codeSnippet = document.getElementById(lang);
+  codeSnippet.classList.add('active');
+}
+</script>
+
+<Layout>
+  <main class="py-16">
+    <div class="body-content flex flex-col items-center justify-center">
+      <p class="mb-6 w-[75%] text-lg">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec euismod, nisl eget consectetur suscipit, nisl nunc euismod nisi, euismod aliquam nisl nunc euismod nisi.
+      </p>
+      <div class="code-blocks w-[75%]">
+        <div class="buttons-group flex">
+          <button class="btn bg-[#3C3857] hover:bg-[rgba(42,40,62,0.8)]" onclick="showCodeSnippet('python')">Python</button>
+          <button class="btn bg-[#3C3857] hover:bg-[rgba(42,40,62,0.8)]" onclick="showCodeSnippet('js')">Javascript</button>
+        </div>
+        <div class="code-snippet-group">
+          <div id="python" class="code-snippet hidden">
+            <PythonCode/>
+          </div>
+          <div id="js" class="code-snippet hidden">
+            <JSCode/>
+          </div>
+        </div>
+      </div>
+      <p class="mt-6 w-[75%] text-lg">
+        Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis.
+      </p>
+    </div>
+  </main>
+</Layout>
+
+<style>
+.code-snippet.active {
+  display: block;
+}
+</style>

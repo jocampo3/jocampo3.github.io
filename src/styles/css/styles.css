@@ -1,2 +1,14 @@
 @import "tailwindcss";
 @plugin "daisyui";
+
+h1 {
+  font-size: var(--text-5xl);
+}
+
+h2 {
+  font-size: var(--text-3xl);
+}
+
+.code-snippet pre {
+  padding: 20px;
+}
