@@ -27,11 +27,15 @@ function showCodeSnippet(lang) {
 
 <Layout>
   <main class="py-16">
-    <div class="body-content flex flex-col items-center justify-center">
-      <p class="mb-6 w-[75%] text-lg">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec euismod, nisl eget consectetur suscipit, nisl nunc euismod nisi, euismod aliquam nisl nunc euismod nisi.
+    <div class="body-content flex flex-col items-center justify-center w-[85%] md:w-[50%] lg:w-[50%] mx-auto">
+      <a href="/blogs" class="btn bg-[#3C3857] hover:bg-[rgba(42,40,62,0.8)] mb-6 mr-auto">← Return to blogs</a>
+      <h1 class="mb-6 text-4xl font-bold mr-auto">Insertion Sort</h1>
+      <p class="mb-6 text-lg">
+        Insertion Sort is an efficient algorithm for sorting a <strong>small</strong> number of elements.
+        The most common illustration used for demonstrating insertion sort is playing cards. We start with an empty left hand and the cards face down on the table. We then remove one card at a time from the table and insert it into the correct position in the left hand. To find the correct position of the card, we compare it with each of the cards already in hand.
       </p>
-      <div class="code-blocks w-[75%]">
+      <h2 class="mb-6 text-2xl font-bold mr-auto">The Code</h2>
+      <div class="code-blocks w-full">
         <div class="buttons-group flex">
           <button class="btn bg-[#3C3857] hover:bg-[rgba(42,40,62,0.8)]" onclick="showCodeSnippet('python')">Python</button>
           <button class="btn bg-[#3C3857] hover:bg-[rgba(42,40,62,0.8)]" onclick="showCodeSnippet('js')">Javascript</button>
@@ -45,8 +49,24 @@ function showCodeSnippet(lang) {
           </div>
         </div>
       </div>
-      <p class="mt-6 w-[75%] text-lg">
-        Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis.
+      <p class="mt-6 text-lg">
+        In this python code snippet, we see an implementation of Insertion Sort. Within our for loop, the temp variable, key, tracks the current element. We also keep track of the 'j - 1' element using a variable 'i'. If the element in i is greater than the key, then we have to swap those elements by setting a[i + 1] (or j in the first iteration) to the value of a[i]. This pattern continues until there are no more values before 'j' that are greater than itself. Finally, using our temp variable (key), we set that equal to the current position of 'j'. That is insertion sort!
+      </p>
+      <h2 class="mr-auto my-6 text-2xl font-bold">The Analysis</h2>
+      <p class="text-lg">All things considered, Insertion Sort is pretty inefficient. It works best when working with smaller datasets. This is due to the double loop required for the algorithm to work. However, it is still an effective in-place sorting algorithm.</p>
+      <p class="text-lg mt-6 font-bold mr-auto">Time Complexities:</p>
+      <ul class="text-lg">
+        <li>Best Case: O(n) - If the list is already sorted, than additional sorts are required.</li>
+        <li>Average Case: O(n<sup>2</sup>) - If some of the list is unsorted, then the algorithm still requires an additional loop of the list to sort items.</li>
+        <li>Worst Case: O(n<sup>2</sup>) - If the list is reverse sorted. The time complexity does not change from average, but you can expect the time to sort to increase.</li>
+      </ul>
+      <p class="text-lg mt-6 font-bold mr-auto">Space Complexity</p>
+      <ul class="text-lg">
+        <li>Auxillary Space: O(1) - One of the advantages for Insertion Sort is its space complexity! Because it doesn't require extra allocation of space to work, the space complexity is O(1) additional space, making it an space-efficient algorithm.</li>
+      </ul>
+      <h2 class="mr-auto my-6 text-2xl font-bold">The Takeaway</h2>
+      <p class="text-lg">
+        Insertion Sort is the first sorting algorithm I learned about in my data structures and algorithms course. Because of that, it holds a special place in my heart. Conceptually, it is quite simple to understand, but actually writing the code for it is a different story. Yes, it only requires a few lines of code, but imagine having to write this out during an interview by memory? Unless you have researched and put a good amount of thought into this algorithm, writing this from scratch can be tricky! 
       </p>
     </div>
   </main>

@@ -1,0 +1,39 @@
+---
+interface Props {
+  blogName: string;
+  blogLink?: string;
+  blogDesc?: string;
+  blogImage?: string;
+  blogCategories?: string[];
+}
+const { blogName, blogDesc, blogLink, blogImage } = Astro.props;
+---
+<a href={blogLink} class="blog border-2 border-solid border-gray-100 rounded-xl max-w-[90%]">
+  <div class="blog-content flex flex-col">
+    <img src={blogImage} alt=`${blogName.replaceAll(" ", "-")}-image` class="mb-2 rounded-lg h-[175px]"/>
+    <h4 class="blog-name text-white font-bold text-2xl pt-1 px-4">{blogName}</h4>
+    <p class="blog-desc text-[#cdcdcd]  text-lg pt-1 px-4 pb-4">{blogDesc}</p>
+  </div>
+</a>
+
+<style>
+.blog {
+  background-color: #3C3857;
+  transition: transform .6s ease;
+}
+
+.blog:hover {
+  transform: translateY(-1px) scale(1);
+  background-color: rgba(42, 40, 62, 0.8);
+}
+
+@media (max-width: 768px) {
+  .blog:hover {
+  transform: none;
+  }
+}
+
+a {
+	cursor: pointer;
+}
+</style>
