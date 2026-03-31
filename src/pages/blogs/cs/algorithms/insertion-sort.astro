@@ -4,7 +4,9 @@
 
 import PythonCode from './code/insertion-sort-py.md';
 import JSCode from './code/insertion-sort-js.md';
-import Layout from '../../../layouts/layout.astro';
+import RubyCode from './code/insertion-sort-rb.md';
+import GoCode from './code/insertion-sort-go.md';
+import Layout from '../../../../layouts/layout.astro';
 ---
 
 <script is:inline>
@@ -28,8 +30,12 @@ function showCodeSnippet(lang) {
 }
 </script>
 
-<Layout>
-  <main class="py-16">
+<Layout 
+  title='Insertion Sort: Code, Analysis, & Implementations | JO Blog'
+  metaKeywords={['insertion sort', 'sorting algorithm', 'data structures', 'algorithms', 'javascript', 'python', 'ruby', 'go', 'blog']}
+  metaDescription='Learn about the Insertion Sort algorithm, including its code examples, analysis, and practical notes. Featuring implementations in multiple languages.'
+>
+  <main class="bg-linear-180 from-[#211f2f] to-[#29283E] py-16">
     <div class="body-content flex flex-col items-center justify-center w-[85%] md:w-[50%] lg:w-[50%] mx-auto">
       <a href="/blogs" class="btn bg-[#3C3857] hover:bg-[rgba(42,40,62,0.8)] mb-6 mr-auto">← Return to blogs</a>
       <h1 class="mb-6 text-4xl font-bold mr-auto">Insertion Sort</h1>
@@ -42,6 +48,8 @@ function showCodeSnippet(lang) {
         <div class="buttons-group flex">
           <button class="btn bg-[#3C3857] hover:bg-[rgba(42,40,62,0.8)]" onclick="showCodeSnippet('python')">Python</button>
           <button class="btn bg-[#3C3857] hover:bg-[rgba(42,40,62,0.8)]" onclick="showCodeSnippet('js')">Javascript</button>
+          <button class="btn bg-[#3C3857] hover:bg-[rgba(42,40,62,0.8)]" onclick="showCodeSnippet('rb')">Ruby</button>
+          <button class="btn bg-[#3C3857] hover:bg-[rgba(42,40,62,0.8)]" onclick="showCodeSnippet('go')">Go</button>
         </div>
         <div class="code-snippet-group">
           <div id="python" class="code-snippet hidden">
@@ -50,10 +58,16 @@ function showCodeSnippet(lang) {
           <div id="js" class="code-snippet hidden">
             <JSCode/>
           </div>
+          <div id="rb" class="code-snippet hidden">
+            <RubyCode/>
+          </div>
+          <div id="go" class="code-snippet hidden">
+            <GoCode/>
+          </div>
         </div>
       </div>
       <p class="mt-6 text-lg">
-        In this python code snippet, we see an implementation of Insertion Sort. Within our for loop, the temp variable, key, tracks the current element. We also keep track of the 'j - 1' element using a variable 'i'. If the element in i is greater than the key, then we have to swap those elements by setting a[i + 1] (or j in the first iteration) to the value of a[i]. This pattern continues until there are no more values before 'j' that are greater than itself. Finally, using our temp variable (key), we set that equal to the current position of 'j'. That is insertion sort!
+        In the code snippets above, we see an implementation of Insertion Sort. Within our for loop, the temp variable, key, tracks the current element. We also keep track of the 'j - 1' element using a variable 'i'. If the element in i is greater than the key, then we have to swap those elements by setting a[i + 1] (or j in the first iteration) to the value of a[i]. This pattern continues until there are no more values before 'j' that are greater than itself. Finally, using our temp variable (key), we set that equal to the current position of 'j'. That is insertion sort! (Note: The purpose of a insertion sort is to sort an array in-place. But I stored the sorted array in a variable called 'sorted' in some of the code snippets to help output the array to the user. Just a personal preference to avoid creating a util function.)
       </p>
       <h2 class="mr-auto my-6 text-2xl font-bold">The Analysis</h2>
       <p class="text-lg">All things considered, Insertion Sort is pretty inefficient. It works best when working with smaller datasets. This is due to the double loop required for the algorithm to work. However, it is still an effective in-place sorting algorithm.</p>

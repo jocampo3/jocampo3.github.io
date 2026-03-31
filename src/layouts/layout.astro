@@ -1,6 +1,27 @@
---- import Header from "./header.astro";
+---
+import Header from "./header.astro";
 import Footer from "./footer.astro";
 import '../styles/css/styles.css';
+
+
+interface Props {
+  title?: string;
+  metaKeywords?: string[];
+  metaDescription?: string;
+}
+
+const {
+  title = "Jose Ocampo",
+  metaKeywords = [
+    "jose ocampo",
+    "portfolio",
+    "work experience",
+    "computer science",
+    "software development",
+    "personal site",
+  ],
+  metaDescription = "Software Developer and Computer Science Graduate specializing in Ruby on Rails, Python backend services, and Web Developement.",
+} = Astro.props;
 ---
 
 <!doctype html>
@@ -11,9 +32,9 @@ import '../styles/css/styles.css';
 		<link rel="icon" type="image/svg+xml" href="/triforce.svg" />
     <meta name="generator" content={Astro.generator} />
     <meta name="author" content="Jose Ocampo">
-    <meta name="robots" content="index">
-    <meta name="description" content="Software Developer and Computer Science Graduate specializing in Ruby on Rails, Python backend services, and Web Developement." />
-		<title>Jose Ocampo</title>
+    <meta name="keywords" content=`${metaKeywords}` />
+    <meta name="description" content={metaDescription} />
+    <title>{title}</title>
 	</head>
   <body class="">
     <Header/>
@@ -27,5 +48,5 @@ import '../styles/css/styles.css';
 	body {
     font-family: monospace;
     scroll-behavior: smooth;
-	}
+  }
 </style>

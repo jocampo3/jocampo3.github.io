@@ -2,13 +2,14 @@
 interface Props {
   blogName: string;
   blogLink?: string;
+  blogTarget?: string;
   blogDesc?: string;
   blogImage?: string;
   blogCategories?: string[];
 }
-const { blogName, blogDesc, blogLink, blogImage } = Astro.props;
+const { blogName, blogDesc, blogLink, blogTarget, blogImage } = Astro.props;
 ---
-<a href={blogLink} class="blog border-2 border-solid border-gray-100 rounded-xl max-w-[90%]">
+<a href={blogLink} target={blogTarget} class="blog border-2 border-solid border-gray-100 rounded-xl max-w-[90%]">
   <div class="blog-content flex flex-col">
     <img src={blogImage} alt=`${blogName.replaceAll(" ", "-")}-image` class="mb-2 rounded-lg h-[175px]"/>
     <h4 class="blog-name text-white font-bold text-2xl pt-1 px-4">{blogName}</h4>
@@ -20,6 +21,8 @@ const { blogName, blogDesc, blogLink, blogImage } = Astro.props;
 .blog {
   background-color: #3C3857;
   transition: transform .6s ease;
+  max-height: 400px;
+  min-height: 350px;
 }
 
 .blog:hover {

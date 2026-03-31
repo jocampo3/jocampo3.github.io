@@ -3,21 +3,40 @@ import Layout from '../../layouts/layout.astro';
 import BlogCard from '../../components/blog-card.astro';
 ---
 
-<Layout>
-  <main>
+<Layout
+  title="Blog | Jose Ocampo"
+  metaKeywords={["Jose Ocampo blog", "music production tips", "software engineering blog", "gaming blog", "faith stories", "thoughtful stories", "technical how-tos", "music technology articles", "audio engineering insights", "independent producers", "songwriting advice", "home recording"]}
+  metaDescription="Browse original blogs by Jose Ocampo on music, software engineering, gaming, and faith. Dive into thoughtful stories and technical how-tos."
+>
+  <main class="bg-linear-180 from-[#211f2f] to-[#29283E]">
     <div class="blog-page-content flex flex-col items-center justify-center py-16">
       <h1 class="!text-7xl pb-6">Blogs</h1>
-      <p class="text-xl text-center italic text-[#CFCDDF] pb-10 mx-5">
-        Welcome to my blogs! Here, you will find some yaps about things I am passionate about—from all things CS to more personal topics such as music and faith.
+      <p class="text-xl text-center italic text-[#CFCDDF] pb-10 mx-5 max-w-[85%]">
+        Welcome to my blogs! Here, you will find some yaps about things I am passionate about—from all things CS to more personal interests such as music, gaming, and faith.
       </p>
-      <div class="w-[85%] flex flex-col items-center justify-center sm:grid sm:grid-cols-2 md:grid lg:grid md:grid-cols-2 lg:grid-cols-3 mx-auto">
+      <div class="w-[85%] flex flex-col items-center justify-center  gap-10 sm:grid sm:grid-cols-2 sm:gap-10 md:grid lg:grid md:grid-cols-2 md:gap-10 lg:grid-cols-3 mx-auto">
+        <BlogCard
+          blogName='"Waterfall Raindrops" and Ableton Live'
+          blogLink='/blogs/music/waterfall-raindrops'
+          blogImage='/assets/images/waterfall-raindrops.png'
+          blogDesc="'Waterfall Raindrops' is a song I composed during my brief obssession with working with DAW's (Digital Audio Workstations). At the time, my playlist consisted of..."
+        />
         <BlogCard
           blogName='Insertion Sort'
-          blogLink='/blogs/algorithms/insertion-sort'
+          blogLink='/blogs/cs/algorithms/insertion-sort'
           blogImage='/assets/images/insertion-sort.webp'
-          blogDesc='Insertion Sort is an efficient algorithm for sorting a small number of elements. The most common illustration used for demonstrating insertion sort is playing cards. We start with an empty left hand...'
+          blogDesc='Insertion Sort is an efficient algorithm for sorting a small number of elements. The most common illustration used for demonstrating insertion sort is playing cards. We start with...'
+        />
+        <BlogCard
+          blogName='Rails 101: CRUD'
+          blogLink='https://medium.com/@jeocampo/ruby-on-rails-101-crud-jose-ocampo-6e915c64364f'
+          blogTarget='_blank'
+          blogImage='/assets/images/medium-article.png'
+          blogDesc='Ruby on Rails is a full-stack web development framework. Rails is a server-side framework, making it easy to scale projects and write and maintain your code. I use Rails in my...'
         />
       </div>
     </div>
   </main>
 </Layout>
+
+<!--  -->
