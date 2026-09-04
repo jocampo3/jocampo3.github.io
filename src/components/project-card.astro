@@ -6,8 +6,12 @@ interface Props {
   projectFramework?: string;
   projectDesc?: string;
   projectImage?: string;
+  projectStatus?: string;
 }
-const { projectName, projectDesc, projectFramework, projectLink, projectType, projectImage } = Astro.props;
+const { projectName, projectDesc, projectFramework, projectLink, projectType, projectImage, projectStatus } = Astro.props;
+
+// let statusClass = 'complete';
+// statusClass = projectStatus == 'incomplete' ? 'incomplete' : 'complete';
 ---
 <a href={projectLink} target="_blank" class="project border-2 border-solid border-gray-100 rounded-xl max-w-[90%]">
   <div class="project-content flex flex-col">
